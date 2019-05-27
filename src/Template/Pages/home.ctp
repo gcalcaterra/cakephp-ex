@@ -1,134 +1,278 @@
-        <div class="row">
-          <section class='col-xs-12 col-sm-6 col-md-6'>
-            <section>
-              <h2>How to use this example application</h2>
-                <p>For instructions on how to use this application with OpenShift, start by reading the <a href="http://docs.okd.io/latest/dev_guide/templates.html#using-the-quickstart-templates">Developer Guide</a>.</p>
+<?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
+ * @since         0.10.0
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
+ */
+use Cake\Cache\Cache;
+use Cake\Core\Configure;
+use Cake\Core\Plugin;
+use Cake\Datasource\ConnectionManager;
+use Cake\Error\Debugger;
+use Cake\Network\Exception\NotFoundException;
 
-              <h2>Deploying code changes</h2>
-                <p>
-                  The source code for this application is available to be forked from the <a href="https://www.github.com/sclorg/cakephp-ex">OpenShift GitHub repository</a>.
-                  You can configure a webhook in your repository to make OpenShift automatically start a build whenever you push your code:
-                </p>
+$this->layout = false;
 
-<ol>
-  <li>From the Web Console homepage, navigate to your project</li>
-  <li>Click on Browse &gt; Builds</li>
-  <li>Click the link with your BuildConfig name</li>
-  <li>Click the Configuration tab</li>
-  <li>Click the "Copy to clipboard" icon to the right of the "GitHub webhook URL" field</li>
-  <li>Navigate to your repository on GitHub and click on repository settings &gt; webhooks &gt; Add webhook</li>
-  <li>Paste your webhook URL provided by OpenShift</li>
-  <li>Leave the defaults for the remaining fields &mdash; that's it!</li>
-</ol>
-<p>After you save your webhook, if you refresh your settings page you can see the status of the ping that Github sent to OpenShift to verify it can reach the server.</p>
-<p>Note: adding a webhook requires your OpenShift server to be reachable from GitHub.</p>
+if (!Configure::read('debug')) :
+    throw new NotFoundException(
+        'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
+    );
+endif;
 
-                <h3>Working in your local Git repository</h3>
-                <p>If you forked the application from the OpenShift GitHub example, you'll need to manually clone the repository to your local system. Copy the application's source code Git URL and then run:</p>
+$cakeDescription = 'CakePHP: the rapid development PHP framework';
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <?= $this->Html->charset() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <?= $cakeDescription ?>
+    </title>
 
-<pre>$ git clone &lt;git_url&gt; &lt;directory_to_create&gt;
+    <?= $this->Html->meta('icon') ?>
+    <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('home.css') ?>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
+</head>
+<body class="home">
 
-# Within your project directory
-# Commit your changes and push to OpenShift
+<header class="row">
+    <div class="header-image"><?= $this->Html->image('cake.logo.svg') ?></div>
+    <div class="header-title">
+        <h1>Welcome to CakePHP <?= Configure::version() ?> Red Velvet. Build fast. Grow solid.</h1>
+    </div>
+</header>
 
-$ git commit -a -m 'Some commit message'
-$ git push</pre>
-
-<p>After pushing changes, you'll need to manually trigger a build if you did not setup a webhook as described above.</p>
-
-                  <h3>Expanding on sample app</h3>
-                  <p>
-                  In order to access the original CakePHP application, you must restore the original
-                  src/Template/Layout/default.ctp.default and src/Template/Pages/home.ctp.default files.
-                  </p>
-                  <p>
-                  It will also be necessary to update your application to talk to your database back-end.  The <code>config/app.php</code> file used by CakePHP was set up in such a way that it will accept environment variables for your connection information that you pass to it.
-                  Once an administrator has created a MySQL database service for you to connect with you can add the following environment variables to your deploymentConfig to ensure all your frontend pods have access to these environment variables.
-                  Note: the cakephp-mysql.json template creates the DB service and environment variables for you.
-
-<pre>
-oc env dc/cakephp-mysql-example DATABASE_SERVICE_NAME=&lt;database service name&gt;
-oc env dc/cakephp-mysql-example DATABASE_ENGINE=mysql
-oc env dc/cakephp-mysql-example DATABASE_NAME=&lt;your created database&gt;
-oc env dc/cakephp-mysql-example &lt;database service name&gt;_DATABASE_USER=&lt;your database user&gt;
-oc env dc/cakephp-mysql-example &lt;database service name&gt;_DATABASE_PASSWORD=&lt;your database user's password&gt;
-</pre>
-                  </p>
-                  <p>
-                  Note: If the database service is created in the same project as the frontend pod,
-                  the *_SERVICE_HOST and *_SERVICE_PORT environment variables will be automatically
-                  created.
-                  </p>
-                  <p>
-                  You will need to redeploy your application in order to pick up the new environment variables.  You can force a deployment
-                  by running:
-<pre>
-oc deploy cakephp-mysql-example --latest
-</pre>
-                  </p>
-
-            </section>
-
-          </section>
-          <section class="col-xs-12 col-sm-6 col-md-6">
-
-                <h2>Managing your application</h2>
-
-                <p>Documentation on how to manage your application from the Web Console or Command Line is available at the <a href="http://docs.okd.io/latest/dev_guide/overview.html">Developer Guide</a>.</p>
-
-                <h3>Web Console</h3>
-                <p>You can use the Web Console to view the state of your application components and launch new builds.</p>
-
-                <h3>Command Line</h3>
-                <p>With the <a href="http://docs.okd.io/latest/cli_reference/overview.html">OpenShift command line interface</a> (CLI), you can create applications and manage projects from a terminal.</p>
-
-                <h2>Development Resources</h2>
-                  <ul>
-                    <li><a href="http://docs.okd.io/latest/welcome/index.html">OpenShift Documentation</a></li>
-                    <li><a href="https://github.com/openshift/origin">Openshift Origin GitHub</a></li>
-                    <li><a href="https://github.com/openshift/source-to-image">Source To Image GitHub</a></li>
-                    <li><a href="http://docs.okd.io/latest/using_images/s2i_images/php.html">Getting Started with PHP on OpenShift</a></li>
-                    <li><a href="http://stackoverflow.com/questions/tagged/openshift">Stack Overflow questions for OpenShift</a></li>
-                    <li><a href="http://git-scm.com/documentation">Git documentation</a></li>
-                  </ul>
-
-                <h2>Request information</h2>
-                <p>Page view count:
-               <?php
-                    use Cake\Datasource\ConnectionManager;
-
-                    $hasDB=1;
-                    $tableExisted=0;
-                    try {
-                      $connection = ConnectionManager::get('default');
-                    } catch(Exception $e) {
-                      $hasDB=0;
-                    }
-                    if ($hasDB) {
-                        try {
-                          $connection->execute('create table view_counter (c integer)');
-                        } catch (Exception $e) {
-                        	$tableExisted=1;
-                        }
-                        try {
-                            if ($tableExisted==0) {
-                            	$connection->execute('insert into view_counter values(1)');
-                            } else {
-                                $connection->execute('update view_counter set c=c+1');
-                            }
-                            $result=$connection->execute('select * from view_counter')->fetch('assoc');;
-                        } catch (Exception $e) {
-                            $hasDB=0;
-                        }
-                    }
-                ?>
-                <?php if ($hasDB==1) : ?>
-                   <span class="code" id="count-value"><?php print_r($result['c']); ?></span>
-                   </p>
-                <?php else : ?>
-                   <span class="code" id="count-value">No database configured</span>
-                   </p>
-                <?php endif; ?>
-
-          </section>
+<div class="row">
+    <div class="columns large-12">
+        <div class="ctp-warning alert text-center">
+            <p>Please be aware that this page will not be shown if you turn off debug mode unless you replace src/Template/Pages/home.ctp with your own version.</p>
         </div>
+        <div id="url-rewriting-warning" class="alert url-rewriting">
+            <ul>
+                <li class="bullet problem">
+                    URL rewriting is not properly configured on your server.<br />
+                    1) <a target="_blank" href="https://book.cakephp.org/3.0/en/installation.html#url-rewriting">Help me configure it</a><br />
+                    2) <a target="_blank" href="https://book.cakephp.org/3.0/en/development/configuration.html#general-configuration">I don't / can't use URL rewriting</a>
+                </li>
+            </ul>
+        </div>
+        <?php Debugger::checkSecurityKeys(); ?>
+    </div>
+</div>
+
+<div class="row">
+    <div class="columns large-6">
+        <h4>Environment</h4>
+        <ul>
+        <?php if (version_compare(PHP_VERSION, '5.6.0', '>=')) : ?>
+            <li class="bullet success">Your version of PHP is 5.6.0 or higher (detected <?= PHP_VERSION ?>).</li>
+        <?php else : ?>
+            <li class="bullet problem">Your version of PHP is too low. You need PHP 5.6.0 or higher to use CakePHP (detected <?= PHP_VERSION ?>).</li>
+        <?php endif; ?>
+
+        <?php if (extension_loaded('mbstring')) : ?>
+            <li class="bullet success">Your version of PHP has the mbstring extension loaded.</li>
+        <?php else : ?>
+            <li class="bullet problem">Your version of PHP does NOT have the mbstring extension loaded.</li>;
+        <?php endif; ?>
+
+        <?php if (extension_loaded('openssl')) : ?>
+            <li class="bullet success">Your version of PHP has the openssl extension loaded.</li>
+        <?php elseif (extension_loaded('mcrypt')) : ?>
+            <li class="bullet success">Your version of PHP has the mcrypt extension loaded.</li>
+        <?php else : ?>
+            <li class="bullet problem">Your version of PHP does NOT have the openssl or mcrypt extension loaded.</li>
+        <?php endif; ?>
+
+        <?php if (extension_loaded('intl')) : ?>
+            <li class="bullet success">Your version of PHP has the intl extension loaded.</li>
+        <?php else : ?>
+            <li class="bullet problem">Your version of PHP does NOT have the intl extension loaded.</li>
+        <?php endif; ?>
+        </ul>
+    </div>
+    <div class="columns large-6">
+        <h4>Filesystem</h4>
+        <ul>
+        <?php if (is_writable(TMP)) : ?>
+            <li class="bullet success">Your tmp directory is writable.</li>
+        <?php else : ?>
+            <li class="bullet problem">Your tmp directory is NOT writable.</li>
+        <?php endif; ?>
+
+        <?php if (is_writable(LOGS)) : ?>
+            <li class="bullet success">Your logs directory is writable.</li>
+        <?php else : ?>
+            <li class="bullet problem">Your logs directory is NOT writable.</li>
+        <?php endif; ?>
+
+        <?php $settings = Cache::getConfig('_cake_core_'); ?>
+        <?php if (!empty($settings)) : ?>
+            <li class="bullet success">The <em><?= $settings['className'] ?>Engine</em> is being used for core caching. To change the config edit config/app.php</li>
+        <?php else : ?>
+            <li class="bullet problem">Your cache is NOT working. Please check the settings in config/app.php</li>
+        <?php endif; ?>
+        </ul>
+    </div>
+    <hr />
+</div>
+
+<div class="row">
+    <div class="columns large-6">
+        <h4>Database</h4>
+        <?php
+        try {
+            $connection = ConnectionManager::get('default');
+            $connected = $connection->connect();
+        } catch (Exception $connectionError) {
+            $connected = false;
+            $errorMsg = $connectionError->getMessage();
+            if (method_exists($connectionError, 'getAttributes')) :
+                $attributes = $connectionError->getAttributes();
+                if (isset($errorMsg['message'])) :
+                    $errorMsg .= '<br />' . $attributes['message'];
+                endif;
+            endif;
+        }
+        ?>
+        <ul>
+        <?php if ($connected) : ?>
+            <li class="bullet success">CakePHP is able to connect to the database.</li>
+        <?php else : ?>
+            <li class="bullet problem">CakePHP is NOT able to connect to the database.<br /><?= $errorMsg ?></li>
+        <?php endif; ?>
+        </ul>
+    </div>
+    <div class="columns large-6">
+        <h4>DebugKit</h4>
+        <ul>
+        <?php if (Plugin::loaded('DebugKit')) : ?>
+            <li class="bullet success">DebugKit is loaded.</li>
+        <?php else : ?>
+            <li class="bullet problem">DebugKit is NOT loaded. You need to either install pdo_sqlite, or define the "debug_kit" connection name.</li>
+        <?php endif; ?>
+        </ul>
+    </div>
+    <hr />
+</div>
+
+<div class="row">
+    <div class="columns large-6">
+        <h3>Editing this Page</h3>
+        <ul>
+            <li class="bullet cutlery">To change the content of this page, edit: src/Template/Pages/home.ctp.</li>
+            <li class="bullet cutlery">You can also add some CSS styles for your pages at: webroot/css/.</li>
+        </ul>
+    </div>
+    <div class="columns large-6">
+        <h3>Getting Started</h3>
+        <ul>
+            <li class="bullet book"><a target="_blank" href="https://book.cakephp.org/3.0/en/">CakePHP 3.0 Docs</a></li>
+            <li class="bullet book"><a target="_blank" href="https://book.cakephp.org/3.0/en/tutorials-and-examples/bookmarks/intro.html">The 15 min Bookmarker Tutorial</a></li>
+            <li class="bullet book"><a target="_blank" href="https://book.cakephp.org/3.0/en/tutorials-and-examples/blog/blog.html">The 15 min Blog Tutorial</a></li>
+            <li class="bullet book"><a target="_blank" href="https://book.cakephp.org/3.0/en/tutorials-and-examples/cms/installation.html">The 15 min CMS Tutorial</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="columns large-12 text-center">
+        <h3 class="more">More about Cake</h3>
+        <p>
+            CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Front Controller and MVC.<br />
+            Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
+        </p>
+    </div>
+    <hr/>
+</div>
+
+<div class="row">
+    <div class="columns large-4">
+        <i class="icon support">P</i>
+        <h3>Help and Bug Reports</h3>
+        <ul>
+            <li class="bullet cutlery">
+                <a href="irc://irc.freenode.net/cakephp">irc.freenode.net #cakephp</a>
+                <ul><li>Live chat about CakePHP</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="http://cakesf.herokuapp.com/">Slack</a>
+                <ul><li>CakePHP Slack support</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://github.com/cakephp/cakephp/issues">CakePHP Issues</a>
+                <ul><li>CakePHP issues and pull requests</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="http://discourse.cakephp.org/">CakePHP Forum</a>
+                <ul><li>CakePHP official discussion forum</li></ul>
+            </li>
+        </ul>
+    </div>
+    <div class="columns large-4">
+        <i class="icon docs">r</i>
+        <h3>Docs and Downloads</h3>
+        <ul>
+            <li class="bullet cutlery">
+                <a href="https://api.cakephp.org/3.0/">CakePHP API</a>
+                <ul><li>Quick Reference</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://book.cakephp.org/3.0/en/">CakePHP Documentation</a>
+                <ul><li>Your Rapid Development Cookbook</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://bakery.cakephp.org">The Bakery</a>
+                <ul><li>Everything CakePHP</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://plugins.cakephp.org">CakePHP plugins repo</a>
+                <ul><li>A comprehensive list of all CakePHP plugins created by the community</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://github.com/cakephp/">CakePHP Code</a>
+                <ul><li>For the Development of CakePHP Git repository, Downloads</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://github.com/FriendsOfCake/awesome-cakephp">CakePHP Awesome List</a>
+                <ul><li>A curated list of amazingly awesome CakePHP plugins, resources and shiny things.</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://www.cakephp.org">CakePHP</a>
+                <ul><li>The Rapid Development Framework</li></ul>
+            </li>
+        </ul>
+    </div>
+    <div class="columns large-4">
+        <i class="icon training">s</i>
+        <h3>Training and Certification</h3>
+        <ul>
+            <li class="bullet cutlery">
+                <a href="https://cakefoundation.org/">Cake Software Foundation</a>
+                <ul><li>Promoting development related to CakePHP</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://training.cakephp.org/">CakePHP Training</a>
+                <ul><li>Learn to use the CakePHP framework</li></ul>
+            </li>
+            <li class="bullet cutlery">
+                <a href="https://certification.cakephp.org/">CakePHP Certification</a>
+                <ul><li>Become a certified CakePHP developer</li></ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
