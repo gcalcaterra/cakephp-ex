@@ -17,7 +17,7 @@ CREATE TABLE preferences (
 	created DATETIME,
 	modified DATETIME,
 	UNIQUE KEY (name)
-)
+);
 
 CREATE TABLE users_preferences (
 	user_id INT NOT NULL,
@@ -25,4 +25,4 @@ CREATE TABLE users_preferences (
 	PRIMARY KEY(user_id, preference_id),
 	FOREIGN KEY user_key(user_id) REFERENCES users(id),
 	FOREIGN KEY preference_key(preference_id) REFERENCES preferences(id)
-)
+);

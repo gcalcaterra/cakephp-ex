@@ -11,7 +11,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <title>VIDUC</title>
-    <meta name="descriptiones" content="">
+    <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- mobile specific metas
@@ -20,21 +20,21 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/vendor.css">
+    <link rel="stylesheet" href="/css/main.css">
     <!-- script
     ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
+    <script src="/js/modernizr.js"></script>
+    <script src="/js/pace.min.js"></script>
     <script>
         function mostrar(dato) {
             if (dato == "Otros") {
                 document.getElementById("otro").style.display = "block";
-                document.getElementById("opcciones").style.display = "none";
+                document.getElementById("opciones").style.display = "none";
             } else {
                 document.getElementById("otro").style.display = "none";
-                document.getElementById("opcciones").style.display = "block";
+                document.getElementById("opciones").style.display = "block";
 
             }
 
@@ -43,8 +43,8 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -56,7 +56,7 @@
 
         <div class="header-logo">
             <a class="site-logo" href="#0">
-                <img src="img/logo.png" alt="Homepage">
+                <img src="/img/logo.png" alt="Homepage">
             </a>
         </div>
 
@@ -73,7 +73,8 @@
                     <li><a class="smoothscroll" href="#contact" title="Ayudanos a Conocerte">Ayudanos a Conocerte</a></li>
                     <li><a class="smoothscroll" href="#services" title="Historias">Historias</a></li>
                     <li><a class="smoothscroll" href="#clients" title="Nosotros">Acerca de Nosotros</a></li>
-
+                    <li><a href="/users/login">Iniciar Sesión</a></li>
+                    <li><a href="/users/add">Registrarse</a></li>
                 </ul>
 
                 <p>VIDUC
@@ -217,9 +218,9 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
 
     <script type="text/javascript"></script>
 

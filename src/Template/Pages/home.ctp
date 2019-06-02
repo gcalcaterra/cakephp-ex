@@ -47,7 +47,7 @@
                 <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
             </li>
             <li>
-                <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+                <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
             </li>
             <li>
                 <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
@@ -73,8 +73,7 @@
         <div class="row about-desc" data-aos="fade-up">
             <div class="col-full">
                 <P ALIGN="justify">
-                    Viduc(Videos Educativos) es un aplicación diseñada para que tú puedas aprender de manera fácil y sencilla, oficios como cocina, manualidades, baile, deporte, plomería entre otros. Y de esta manera poder contribuir en tu formación educativa, buscamos desde nuestra perspectiva digital empoderarte y permitirte lograr tu crecimiento personal con el simple hecho de dar un clic.
-
+                    Viduc (Videos Educativos) es un aplicación diseñada para que tú puedas aprender de manera fácil y sencilla, oficios como cocina, manualidades, baile, deporte, plomería entre otros. Y de esta manera poder contribuir en tu formación educativa, buscamos desde nuestra perspectiva digital empoderarte y permitirte lograr tu crecimiento personal con el simple hecho de dar un clic.
                 </p>
                 <div class="row section-header has-bottom-sep" data-aos="fade-up">
 
@@ -266,9 +265,9 @@
                         <input type="radio" name="preferencia" value="Otros" required onchange="mostrar(this.value);"> Otros
                     </p>
 
-                    <div id="opcciones" style="display:none;">
-                        <input type="submit" id="opcciones" value="Enviar">
-                        <input type="reset" id="opcciones" value="Limpiar">
+                    <div id="opciones" style="display:none;">
+                        <input type="submit" id="opciones" value="Enviar">
+                        <input type="reset" id="opciones" value="Limpiar">
                     </div>
                 </form>
 
