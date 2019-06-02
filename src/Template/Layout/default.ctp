@@ -9,10 +9,10 @@
 
     <!--- basic page needs
     ================================================== -->
-    <meta charset="utf-8">
+    <?= $this->Html->charset() ?>
     <title>VIDUC</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="VIDUC: Videos Educacionales para inspirarte y atreverte a lograr tus sueños a travéz del aprendizaje autodidacta con videos">
+    <meta name="author" content="Gustavo Calcaterra, Fatima Romero">
 
     <!-- mobile specific metas
     ================================================== -->
@@ -23,6 +23,7 @@
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('vendor.css') ?>
     <?= $this->Html->css('main.css') ?>
+
     <!-- script
     ================================================== -->
 
@@ -48,8 +49,7 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <?= $this->Html->meta('icon') ?>
 
 </head>
 
@@ -70,7 +70,7 @@
             <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
 
             <div class="header-nav__content">
-                <h3>Ver</h3>
+                <h3><?= $LoggedUser?"Hola " . $LoggedUser['name'] . "!":"Ver" ?></h3>
 
                 <ul class="header-nav__list">
                     <li class="current"><a class="smoothscroll" href="#home" title="Inicio">Inicio</a></li>
@@ -78,8 +78,10 @@
                     <li><a class="smoothscroll" href="#contact" title="Ayudanos a Conocerte">Ayudanos a Conocerte</a></li>
                     <li><a class="smoothscroll" href="#services" title="Historias">Historias</a></li>
                     <li><a class="smoothscroll" href="#clients" title="Nosotros">Acerca de Nosotros</a></li>
-                    <li><a href="/users/login">Iniciar Sesión</a></li>
-                    <li><a href="/users/add">Registrarse</a></li>
+                    <?= $LoggedUser?
+                        "<li><a href=\"/users/logout\">Salir</a></li>":
+                        "<li><a href=\"/users/login\">Iniciar Sesión</a></li><li><a href=\"/users/add\">Registrarse</a></li>"
+                    ?>
                 </ul>
 
                 <p>VIDUC
