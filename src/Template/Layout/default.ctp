@@ -20,13 +20,18 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/vendor.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css('vendor.css') ?>
+    <?= $this->Html->css('main.css') ?>
     <!-- script
     ================================================== -->
-    <script src="/js/modernizr.js"></script>
-    <script src="/js/pace.min.js"></script>
+
+    <?= $this->fetch('meta') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
+
+    <!-- <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script> -->
     <script>
         function mostrar(dato) {
             if (dato == "Otros") {
