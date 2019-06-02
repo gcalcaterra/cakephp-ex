@@ -273,7 +273,7 @@
                 </form>
 
                 <div id="otro" style="display:none;">
-                    <form action="search.php" method="GET">
+                    <form action="preferences/searchYoutubeVideos" method="GET">
                         <div>
                             <b>
 																<font color="white">Escribe tu preferencia:</font>
