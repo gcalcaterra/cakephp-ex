@@ -266,9 +266,9 @@ return [
              * the following line and set the port accordingly
              */
             'port' => env(strtoupper(env("DATABASE_SERVICE_NAME", 'Mysql'))."_SERVICE_PORT", ''),
-            'username' => env("DATABASE_USER", ''),
-            'password' => env("DATABASE_PASSWORD", ''),
-            'database' => env("DATABASE_NAME", ''),
+            'username' => env("DATABASE_USER", 'viduc'),
+            'password' => env("DATABASE_PASSWORD", 'Viduc123'),
+            'database' => env("DATABASE_NAME", 'viduc'),
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
