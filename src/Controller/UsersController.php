@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Http\Exception\ForbiddenException;
 
 /**
  * Users Controller
@@ -73,6 +74,11 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => ['Preferences']
         ]);
+
+        // solamente permitir que el usuario pueda modificar sus datos pero no el de otros usuarios,
+        // solamente permitimos esta accion al admin con uid 1
+        if (id !== $this->Auth->user('id') && $this->Auth->user('id') != 1) throw new ForbiddenException("You can't edit another's user profile");
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
@@ -96,6 +102,11 @@ class UsersController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
+
+        // solamente permitir que el usuario pueda modificar sus datos pero no el de otros usuarios,
+        // solamente permitimos esta accion al admin con uid 1
+        if (id !== $this->Auth->user('id') && $this->Auth->user('id') != 1) throw new ForbiddenException("You can't edit another's user profile");
+        
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
             $this->Flash->success(__('The user has been deleted.'));
@@ -116,6 +127,12 @@ class UsersController extends AppController
             }
             $this->Flash->error('Your username or password is incorrect.');
         }
+    }
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['logout', 'add', 'edit']);
     }
 
     public function logout()

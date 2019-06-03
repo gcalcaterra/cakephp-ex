@@ -166,4 +166,9 @@ class PreferencesController extends AppController
             $this->set('htmlBody', $htmlBody);
         }
     }
+
+    public function show($id) {
+        $this->request->allowMethod('post');
+        
+    }
 }

@@ -70,10 +70,10 @@
 
                 <ul class="header-nav__list">
                     <li class="current"><a class="smoothscroll" href="#home" title="Inicio">Inicio</a></li>
-                    <li><a class="smoothscroll" href="#about" title="Inspirate">Inspirate</a></li>
-                    <li><a class="smoothscroll" href="#contact" title="Ayudanos a Conocerte">Ayudanos a Conocerte</a></li>
-                    <li><a class="smoothscroll" href="#services" title="Historias">Historias</a></li>
-                    <li><a class="smoothscroll" href="#clients" title="Nosotros">Acerca de Nosotros</a></li>
+                    <li><a class="smoothscroll" href="/#about" title="Inspirate">Inspirate</a></li>
+                    <li><a class="smoothscroll" href="/#contact" title="Ayudanos a Conocerte">Ayudanos a Conocerte</a></li>
+                    <li><a class="smoothscroll" href="/#services" title="Historias">Historias</a></li>
+                    <li><a class="smoothscroll" href="/#about" title="Nosotros">Acerca de Nosotros</a></li>
                     <?= $LoggedUser?
                         "<li><a href=\"/users/logout\">Salir</a></li>":
                         "<li><a href=\"/users/login\">Iniciar Sesión</a></li><li><a href=\"/users/add\">Registrarse</a></li>"

@@ -106,7 +106,7 @@
 
     <!-- Autores
     ================================================== -->
-    <section id="clients" class="s-clients">
+    <section id="about" class="s-clients">
 
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
@@ -140,7 +140,7 @@
                             <span class="testimonials__pos">Estudiante</span>
                         </div>
 
-                        <p>Soy Gustavo tengo 26, soy soltero desde siempre, no tengo hijos, actualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA, y a través de esta aplicación estoy en la recta final de conquistar el mundo</p>
+                        <p>Soy Gustavo tengo 26 años, soy soltero desde siempre, no tengo hijos, actualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA, y a través de esta aplicación estoy en la recta final de conquistar el mundo</p>
 
                     </div>
 
@@ -245,11 +245,9 @@
 
                 <h3 class="h6">Queremos conocerte</h3>
 
-                <form action="guardar.php" method="POST">
+                <form action="/preferences/show" method="POST">
 
-                    <input type="text" name="nombre" placeholder="Nombre y Apellido" required="" class="full-width">
-                    <input type="text" name="sexo" placeholder="Sexo" value="" class="full-width">
-                    <input type="text" name="edad" placeholder="Edad" value="" aria-required="true" class="full-width">
+                    <input type="text" name="nombre" placeholder="Nombre" required="true" class="full-width">
                     <p><b>
                             <font color="white">Preferencia:</font>
                         </b>
