@@ -122,7 +122,7 @@
 
                     <div class="testimonials__slide">
 
-                        <img src="img/user-01.JPG" alt="Author image" class="testimonials__avatar">
+                        <img src="img/user-01.jpg" alt="Author image" class="testimonials__avatar">
                         <div class="testimonials__info">
                             <span class="testimonials__name">Fatima Larissa Romero T.</span>
                             <span class="testimonials__pos">Estudiante</span>
