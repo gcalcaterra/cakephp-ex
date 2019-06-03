@@ -18,35 +18,10 @@
                <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
             </div>
 
-            <?= h($htmlBody) ?>
+            <?= $htmlBody ?>
             
          </div>
       </div>
    </div>
 </section>
-<!-- end s-contact -->
-<!-- preloader
-   ================================================== -->
-<div id="preloader">
-   <div id="loader">
-      <div class="line-scale-pulse-out">
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-      </div>
-   </div>
-</div>
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-</body>
-
-</html>
-
 

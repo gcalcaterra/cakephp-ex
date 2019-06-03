@@ -2,7 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Google_Client;
+use \Google_Client;
+use \Google_Service_YouTube;
 
 /**
  * Preferences Controller
@@ -133,7 +134,7 @@ class PreferencesController extends AppController
             $client        = new Google_Client();
             $client->setDeveloperKey( $DEVELOPER_KEY );
             // Define an object that will be used to make all API requests.
-            $youtube  = new \Google_Service_YouTube( $client );
+            $youtube  = new Google_Service_YouTube( $client );
             $htmlBody = '';
             try
             {
@@ -154,8 +155,7 @@ class PreferencesController extends AppController
                             break;
                     }
                 }
-                $htmlBody .= '<ul>$videos</ul>';
-                $this->set($htmlBody);
+                $htmlBody .= "<ul>$videos</ul>";
             }
             catch ( Google_Service_Exception $e ) {
                 $htmlBody .= sprintf( '<p>A service error occurred: <code>%s</code></p>', htmlspecialchars( $e->getMessage() ) );
@@ -163,6 +163,7 @@ class PreferencesController extends AppController
             catch ( Google_Exception $e ) {
                 $htmlBody .= sprintf( '<p>An client error occurred: <code>%s</code></p>', htmlspecialchars( $e->getMessage() ) );
             }
+            $this->set('htmlBody', $htmlBody);
         }
     }
 }

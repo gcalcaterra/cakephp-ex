@@ -272,10 +272,10 @@
                 </form>
 
                 <div id="otro" style="display:none;">
-                    <form action="preferences/searchYoutubeVideos" method="GET">
+                    <form action="/preferences/searchYoutubeVideos" method="GET">
                         <div>
                             <b>
-																<font color="white">Escribe tu preferencia:</font>
+							<font color="white">Escribe tu preferencia:</font>
 														</b>
                             <input type="search" id="q" name="q" required placeholder="Programación, tenis ..." class="full-width">
                             <input type="hidden" id="maxResults" name="maxResults" step="1" value="10">

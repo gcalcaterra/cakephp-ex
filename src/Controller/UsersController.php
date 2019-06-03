@@ -118,12 +118,6 @@ class UsersController extends AppController
         }
     }
 
-    public function initialize()
-    {
-        parent::initialize();
-        $this->Auth->allow(['logout', 'add']);
-    }
-
     public function logout()
     {
         $this->Flash->success('You are now logged out.');
