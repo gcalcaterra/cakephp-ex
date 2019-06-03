@@ -27,12 +27,8 @@
     <!-- script
     ================================================== -->
 
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
-
-    <!-- <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script> -->
+    <script src="/js/modernizr.js"></script>
+    <script src="/js/pace.min.js"></script>
     <script>
         function mostrar(dato) {
             if (dato == "Otros") {
@@ -228,9 +224,6 @@
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
-
-    <script type="text/javascript"></script>
-
 </body>
 
 </html>

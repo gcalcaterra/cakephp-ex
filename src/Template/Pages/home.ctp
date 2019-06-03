@@ -1,9 +1,9 @@
 
     <!-- home
     ================================================== -->
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="img/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
         <div class="header-video">
-            <video src="video/keyboard.mp4" autoplay loop></video>
+            <video src="/video/keyboard.mp4" autoplay loop></video>
         </div>
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
@@ -134,13 +134,13 @@
 
                     <div class="testimonials__slide">
 
-                        <img src="img/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar">
+                        <img src="img/gustavo.jpg" alt="Author image" class="testimonials__avatar">
                         <div class="testimonials__info">
                             <span class="testimonials__name">Gustavo Calcaterra</span>
                             <span class="testimonials__pos">Estudiante</span>
                         </div>
 
-                        <p>Aqui mencionamos cosas sobre cada estudiante.</p>
+                        <p>Soy Gustavo tengo 26, soy soltero desde siempre, no tengo hijos, actualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA, y a través de esta aplicación estoy en la recta final de conquistar el mundo</p>
 
                     </div>
 
