@@ -3031,7 +3031,19 @@ html.no-csstransitions .home-content__main {
     font-size: 1.5rem;
     line-height: 2;
     position: relative;
+
 }
+.contact-conten {
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.4);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    font-family: "montserrat-light", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2;
+    position: relative;
+    text-align: center;
 
 .contact-contentes {
     max-width: 1600px;
