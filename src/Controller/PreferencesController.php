@@ -124,7 +124,7 @@ class PreferencesController extends AppController
         require_once __DIR__ . '../../vendor/autoload.php'; */
         // This code will execute if the user entered a search query in the form
         // and submitted the form. Otherwise, the page displays the form above.
-        if ( isset( $_GET[ 'q' ] ) && isset( $_GET[ 'maxResults' ] ) ) {
+        if (isset($_GET['q']) && isset($_GET['maxResults'])) {
             /*
             * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
             * {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
@@ -132,43 +132,73 @@ class PreferencesController extends AppController
             */
             $DEVELOPER_KEY = 'AIzaSyAcegEcjGVRThQ816PniqyLRsFD6WH4PHg';
             $client        = new Google_Client();
-            $client->setDeveloperKey( $DEVELOPER_KEY );
+            $client->setDeveloperKey($DEVELOPER_KEY);
             // Define an object that will be used to make all API requests.
-            $youtube  = new Google_Service_YouTube( $client );
+            $youtube  = new Google_Service_YouTube($client);
             $htmlBody = '';
-            try
-            {
+            try {
                 // Call the search.list method to retrieve results matching the specified
                 // query term.
-                $searchResponse = $youtube->search->listSearch( 'id,snippet', array(
-                    'q' => $_GET[ 'q' ],
-                    'maxResults' => $_GET[ 'maxResults' ]
-                ) );
+                $searchResponse = $youtube->search->listSearch('id,snippet', array(
+                    'q' => $_GET['q'],
+                    'maxResults' => $_GET['maxResults']
+                ));
                 $videos         = '';
                 $direccion      = '<iframe class="zoom" ; width="450" height="300" src="https://www.youtube.com/embed/%s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><feff>';
                 // Add each result to the appropriate list, and then display the lists of
                 // matching videos, channels, and playlists.
-                foreach ( $searchResponse[ 'items' ] as $searchResult ) {
-                    switch ( $searchResult[ 'id' ][ 'kind' ] ) {
+                foreach ($searchResponse['items'] as $searchResult) {
+                    switch ($searchResult['id']['kind']) {
                         case 'youtube#video':
-                            $videos .= sprintf( $direccion, $searchResult[ 'id' ][ 'videoId' ] );
+                            $videos .= sprintf($direccion, $searchResult['id']['videoId']);
                             break;
                     }
                 }
                 $htmlBody .= "<ul>$videos</ul>";
-            }
-            catch ( Google_Service_Exception $e ) {
-                $htmlBody .= sprintf( '<p>A service error occurred: <code>%s</code></p>', htmlspecialchars( $e->getMessage() ) );
-            }
-            catch ( Google_Exception $e ) {
-                $htmlBody .= sprintf( '<p>An client error occurred: <code>%s</code></p>', htmlspecialchars( $e->getMessage() ) );
+            } catch (Google_Service_Exception $e) {
+                $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
+            } catch (Google_Exception $e) {
+                $htmlBody .= sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
             }
             $this->set('htmlBody', $htmlBody);
         }
     }
 
-    public function show($id) {
+    public function show()
+    {
         $this->request->allowMethod('post');
-        
+        $data = $this->request->getData();
+        $name = $data['nombre'];
+        $preference  = $data['preferencia'];
+        $this->set('name', $name);
+        switch ($preference) {
+            case 'Deportes':
+                $this->viewBuilder()->setTemplate('deportes');
+                break;
+            case 'Idiomas':
+                $this->viewBuilder()->setTemplate('idiomas');
+                break;
+            case "Cocina":
+                $this->viewBuilder()->setTemplate('cocina');
+                break;
+            case "Baile":
+                $this->viewBuilder()->setTemplate('baile');
+                break;
+            case "Electricidad":
+                $this->viewBuilder()->setTemplate('electricidad');
+                break;
+            case "Manicura":
+                $this->viewBuilder()->setTemplate('manicura');
+                break;
+            case "Estilista":
+                $this->viewBuilder()->setTemplate('estilista');
+                break;
+            case "Plomeria":
+                $this->viewBuilder()->setTemplate('plomeria');
+                break;
+            case "Costura":
+                $this->viewBuilder()->setTemplate('costura');
+                break;
+        }
     }
 }
