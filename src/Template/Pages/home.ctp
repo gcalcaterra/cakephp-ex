@@ -3,7 +3,7 @@
     ================================================== -->
     <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
         <div class="header-video">
-            <video src="/video/keyboard.mp4" autoplay loop></video>
+        <video src="/video/keyboard.webm" autoplay loop></video>
         </div>
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>

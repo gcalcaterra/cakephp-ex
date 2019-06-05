@@ -626,9 +626,9 @@ select {
     padding: 1.5rem 0;
     border: 0;
     outline: none;
-    color: #333333;
+    color: #f8eded;
     font-family: "montserrat-light", sans-serif;
-    font-size: 1.4rem;
+    font-size: 2.0rem;
     line-height: 3rem;
     max-width: 100%;
     background: transparent;
@@ -706,7 +706,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-    color: #000000;
+    color: #d6cece;
     border-bottom: 2px solid black;
 }
 
@@ -3044,7 +3044,7 @@ html.no-csstransitions .home-content__main {
     line-height: 2;
     position: relative;
     text-align: center;
-
+}
 .contact-contentes {
     max-width: 1600px;
     background-color: rgba(0, 0, 0, 0.2);
