@@ -3661,7 +3661,7 @@ footer .row {
 }
 
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.css.map 
 .header-video {
   position: absolute;
   top: 0;
@@ -3674,5 +3674,16 @@ footer .row {
 .header-video video {
   min-width: 100%;
   min-height: 100%;
+}*/
+
+video { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: inherit;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ 
+  	transition: 1s opacity;
 }
 
