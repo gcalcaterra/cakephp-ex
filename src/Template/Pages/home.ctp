@@ -1,11 +1,7 @@
 
     <!-- home
     ================================================== -->
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-    <video preload="true" autoplay="autoplay" loop volume="0" poster="pic.jpg"  class="fillWidth">
-				<source src="https://morning-shelf-6185.herokuapp.com/assets/2015-01-01-bokeh-6e0d97b003dff1c88b95db3126cd4788.mp4"> 
-			</video>
-
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
 
