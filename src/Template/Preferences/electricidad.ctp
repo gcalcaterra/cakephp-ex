@@ -59,9 +59,9 @@
                 <iframe width="450" height="250" src="https://www.youtube.com/embed/6Re6i7srK7o?start=14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
-        <div style="text-align: left ;width:800px">
-            <input type="button" value=" Volver" onclick="javascript:history(-1)" />
-        </div>
+        <div style="text-align: left ;width:1200px">
+               <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
+            </div>
     </div>
     <!-- end contact-primary -->
     </div> <!-- end contact-content -->

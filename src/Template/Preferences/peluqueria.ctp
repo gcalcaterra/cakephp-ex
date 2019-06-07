@@ -23,19 +23,19 @@
             </div>
          </div>
          <div id="columna2">
-            <form action="/preferences/searchYoutubeVideos" method="GET"  >
-               <div>
-                  <h3 class="subhead">Temas a buscar :</h3>
-                  <input type="search" style=" border-style: solid; font-size:12pt; color: #f7f9f7; letter-spacing : 3px; id="q" name="q" placeholder="Temas Buscados">
-               </div>
-               <div >
-                  <h3 class="subhead"> Cantidad de Resultados:</h3>
-                  <input type="number" style=" border-style: solid; font-size:12pt; color: #f7f9f7; letter-spacing : 3px; id="maxResults" name="maxResults" min="1" max="50" step="1" value="10">
-               </div>
-               <div style="text-align: right ;width:300px">
-                  <input type="submit" value="Buscar">
-               </div>
-            </form>
+         <form action="/preferences/searchYoutubeVideos" method="GET">
+                    <div>
+                        <h3 class="subhead">Temas a buscar :</h3>
+                        <input type="search" style=" border-style: solid; font-size:12pt; color: #f7f9f7; letter-spacing : 3px; id=" q" name="q" placeholder="Temas Buscados">
+                    </div>
+                    <div>
+                        <h3 class="subhead"> Cantidad de Resultados:</h3>
+                        <input type="number" style=" border-style: solid; font-size:12pt; color: #f7f9f7; letter-spacing : 3px; id=" maxResults" name="maxResults" min="1" max="50" step="1" value="10">
+                    </div>
+                    <div style="text-align: right ;width:300px">
+                        <input type="submit" value="Buscar">
+                    </div>
+                </form>
          </div>
       </div>
       <div class="col-block service-item" data-aos="fade-up">
@@ -68,9 +68,9 @@
                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
          </div>
       </div>
-      <div style="text-align: left ;width:800px">
-         <input type="button" value=" Volver" onclick="javascript:history(-1)" />
-      </div>
+      <div style="text-align: left ;width:1200px">
+               <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
+            </div>
    </div>
    <!-- end contact-primary -->
    </div> <!-- end contact-content -->
