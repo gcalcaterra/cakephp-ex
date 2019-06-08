@@ -124,7 +124,10 @@ class PreferencesController extends AppController
         require_once __DIR__ . '../../vendor/autoload.php'; */
         // This code will execute if the user entered a search query in the form
         // and submitted the form. Otherwise, the page displays the form above.
-        if (isset($_GET['q']) && isset($_GET['maxResults'])) {
+        $interest = $_GET['q'];
+        $maxResults = $_GET['maxResults'];
+
+        if (isset($interest) && isset($maxResults)) {
             /*
             * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
             * {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
@@ -136,12 +139,20 @@ class PreferencesController extends AppController
             // Define an object that will be used to make all API requests.
             $youtube  = new Google_Service_YouTube($client);
             $htmlBody = '';
+            $MagicKeyword1 = 'como';
+            $MagicKeyword2 = 'aprender';
+            $MagicKeyword3 = 'inspiración';
+            #$MagicKeyword3 = 'tutorial';
+
+            $interest = $MagicKeyword1.' '.$MagicKeyword2.' '.$interest;
+            $this->log('interest= '.$interest,'debug');
+
             try {
                 // Call the search.list method to retrieve results matching the specified
                 // query term.
                 $searchResponse = $youtube->search->listSearch('id,snippet', array(
-                    'q' => $_GET['q'],
-                    'maxResults' => $_GET['maxResults']
+                    'q' => $interest,
+                    'maxResults' => $maxResults
                 ));
                 $videos         = '';
                 $direccion      = '<iframe class="zoom" ; width="450" height="300" src="https://www.youtube.com/embed/%s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><feff>';
