@@ -21,7 +21,7 @@ class UsersController extends AppController
     public function index()
     {
         $users = $this->paginate($this->Users);
-
+        
         $this->set(compact('users'));
     }
 
@@ -49,17 +49,20 @@ class UsersController extends AppController
     public function add()
     {
         $user = $this->Users->newEntity();
-        if ($this->request->is('post')) {
+        if ($this->request->is('post') && $this->request->getData()['password'] === $this->request->getData()['confirmPassword']) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'login']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        } else {
+            if ($this->request->getData()['password'] !== $this->request->getData()['confirmPassword']) {
+                $this->Flash->error(__('El password y su confirmacion no coinciden. Por favor, intente nuevamente.'));
+            }
         }
-        $preferences = $this->Users->Preferences->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'preferences'));
+        $this->set(compact('user'));
     }
 
     /**
