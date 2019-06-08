@@ -1,10 +1,7 @@
 
     <!-- home
     ================================================== -->
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-        <div class="header-video">
-            <video src="/video/keyboard.mp4" autoplay loop></video>
-        </div>
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
 
@@ -177,8 +174,10 @@
                     <h3 class="h2">Niña aprendio a bailar dubsted </h3>
                     <P ALIGN="justify">Adilyn Malcolm domina el baila del dubstep gracias a que aprendió la técnica en YouTube. Esta niña de 12 años aprendió viendo una y otra vez a los mejores bailarines de dubstep en el mundo.
                     </p>
+                    <div class="video-container">
                     <iframe width="450" height="250" src="https://www.youtube.com/embed/Ebp8AXKX0d8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                        </div>
+                    </div>
             </div>
 
             <div class="col-block service-item" data-aos="fade-up">
@@ -190,7 +189,9 @@
                     <P ALIGN="justify">Edilson es vigilante tiene 37 años, tenia un sueño hablar mas idiomas y asi con la ayuda de la tecnologia y la motivacion de lograrlo hoy es muy conocido.
 
                     </p>
+                    <div class="video-container">
                     <iframe width="450" height="250" src="https://www.youtube.com/embed/XPOSH5BT7dM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 </div>
             </div>
 
@@ -202,7 +203,9 @@
                     <h3 class="h2">May May aprende a cocinar y hoy es Chef </h3>
                     <P ALIGN="justify">Pero lo que es excepcional en el caso de May es que para lograr convertirse en una chef de éxito no tuvo que asistir a mil y una clases de cocina, No, lo único que necesitó la chef Mahasrabphaisal fue YouTube.
                     </p>
+                    <div class="video-container">
                     <iframe width="450" height="250" src="https://www.youtube.com/embed/uY1cm-7PBes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 </div>
             </div>
 
@@ -214,7 +217,9 @@
                     <h3 class="h2">Hulia aprendio hacer accesorios y manualidades</h3>
                     <P ALIGN="justify">Gracias internet le es posible hacer manualidades que le han servido para tener un apoyo económico extra en su hogar. A largo plazo, espera montar una tienda en dónde se puedan exhibir y comercializar sus manualidades.
                     </p>
+                    <div class="video-container">
                     <iframe width="450" height="250" src="https://www.youtube.com/embed/Ka9wuyljMrU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 </div>
             </div>
 

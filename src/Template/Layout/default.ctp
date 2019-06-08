@@ -66,16 +66,16 @@
             <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
 
             <div class="header-nav__content">
-                <h3><?= $LoggedUser?"Hola " . $LoggedUser['name'] . "!":"Ver" ?></h3>
+                <h3><?= $LoggedUser ? "Hola " . $LoggedUser['name'] . "!" : "Ver" ?></h3>
 
                 <ul class="header-nav__list">
-                    <li class="current"><a class="smoothscroll" href="#home" title="Inicio">Inicio</a></li>
+                    <li class="current"><a class="smoothscroll" href="/#home" title="Inicio">Inicio</a></li>
                     <li><a class="smoothscroll" href="/#about" title="Inspirate">Inspirate</a></li>
                     <li><a class="smoothscroll" href="/#contact" title="Ayudanos a Conocerte">Ayudanos a Conocerte</a></li>
                     <li><a class="smoothscroll" href="/#services" title="Historias">Historias</a></li>
                     <li><a class="smoothscroll" href="/#about" title="Nosotros">Acerca de Nosotros</a></li>
-                    <?= $LoggedUser?
-                        "<li><a href=\"/users/logout\">Salir</a></li>":
+                    <?= $LoggedUser ?
+                        "<li><a href=\"/users/logout\">Salir</a></li>" :
                         "<li><a href=\"/users/login\">Iniciar Sesión</a></li><li><a href=\"/users/add\">Registrarse</a></li>"
                     ?>
                 </ul>
@@ -108,13 +108,15 @@
 
     </header>
     <!-- end s-header -->
-    
+
     <!-- Calling the content from the pages -->
     <?= $this->fetch('content') ?>
 
     <!-- footer
     ================================================== -->
     <footer>
+
+        <?= $this->Flash->render() ?>
 
         <div class="row footer-main">
 
@@ -151,8 +153,7 @@
                 </div>
 
                 <div class="go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up"
-                            aria-hidden="true"></i></a>
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
                 </div>
             </div>
 

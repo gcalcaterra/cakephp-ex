@@ -202,7 +202,7 @@ class PreferencesController extends AppController
                 $this->viewBuilder()->setTemplate('manicura');
                 break;
             case "Estilista":
-                $this->viewBuilder()->setTemplate('estilista');
+                $this->viewBuilder()->setTemplate('peluqueria');
                 break;
             case "Plomeria":
                 $this->viewBuilder()->setTemplate('plomeria');

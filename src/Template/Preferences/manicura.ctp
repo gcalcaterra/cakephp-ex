@@ -66,9 +66,9 @@
                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
          </div>
       </div>
-      <div style="text-align: left ;width:800px">
-         <input type="button" value=" Volver" onclick="javascript:history(-1)" />
-      </div>
+      <div style="text-align: left ;width:1200px">
+               <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
+            </div>
    </div>
    <!-- end contact-primary -->
    </div> <!-- end contact-content -->

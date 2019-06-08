@@ -399,16 +399,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.100",
+            "version": "v0.101",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "bd43c24a828a9f6325abba173c7aec1cd8ed7c10"
+                "reference": "be4d5cb91965dd03e47f88186b5ae95a21050ce7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/bd43c24a828a9f6325abba173c7aec1cd8ed7c10",
-                "reference": "bd43c24a828a9f6325abba173c7aec1cd8ed7c10",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/be4d5cb91965dd03e47f88186b5ae95a21050ce7",
+                "reference": "be4d5cb91965dd03e47f88186b5ae95a21050ce7",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +432,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-05-27T00:23:13+00:00"
+            "time": "2019-06-02T00:23:13+00:00"
         },
         {
             "name": "google/auth",
@@ -4621,16 +4621,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.42.0",
+            "version": "v1.42.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "2983fcf2e20a4afe95f07e61d89a7590b3c8df2e"
+                "reference": "671347603760a88b1e7288aaa9378f33687d7edf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2983fcf2e20a4afe95f07e61d89a7590b3c8df2e",
-                "reference": "2983fcf2e20a4afe95f07e61d89a7590b3c8df2e",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/671347603760a88b1e7288aaa9378f33687d7edf",
+                "reference": "671347603760a88b1e7288aaa9378f33687d7edf",
                 "shasum": ""
             },
             "require": {
@@ -4683,7 +4683,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-05-31T06:20:05+00:00"
+            "time": "2019-06-04T11:31:08+00:00"
         },
         {
             "name": "umpirsky/twig-php-function",

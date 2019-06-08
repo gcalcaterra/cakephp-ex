@@ -59,7 +59,8 @@ class AppController extends Controller
                 'action' => 'login'
             ],
             // If unauthorized, return them to page they were just on
-            'unauthorizedRedirect' => $this->referer()
+            'unauthorizedRedirect' => $this->referer(),
+            'logoutRedirect' => [ 'action' => 'index', 'controller' => 'Pages' ]
         ]);
 
         // Allow the display action so our PagesController
