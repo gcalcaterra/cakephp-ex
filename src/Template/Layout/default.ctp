@@ -128,7 +128,7 @@
 
             <div class="col-six tab-full right footer-subscribe">
 
-                <h2> <span><a href="https://forms.gle/DUgkZnkF6W6Q2y4q8">Hey, dejanos tu opinión</a></span></h2>
+                <h2> <span><a href="https://forms.gle/DUgkZnkF6W6Q2y4q8" target="_blank">Hey, dejanos tu opinión</a></span></h2>
                
             </div>
 
