@@ -12,8 +12,8 @@
                 <h3>Bienvenido al Poder de la WEB</h3>
 
                 <h1>
-                    Aquí encontrarás como hacer lo que siempre has querido <br>
-                    aprender y te mostraremos como que puedes lograrlo. <br>
+                    Aquí encontrarás como aprender lo que siempre has querido <br>
+                    hacer y te mostraremos como puedes lograrlo. <br>
                     Inspirate, eres capaz de conseguirlo.<br>
                 </h1>
 

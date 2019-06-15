@@ -153,6 +153,10 @@ class PreferencesController extends AppController
             $this->log('interest= '.$learningKeyWords,'debug');
 
 
+            //To show login link
+            $afterSearch = true;
+            $this->set('afterSearch', $afterSearch);
+
              //Inspiring
              try {
                 // Call the search.list method to retrieve results matching the specified
@@ -218,6 +222,7 @@ class PreferencesController extends AppController
         $data = $this->request->getData();
         $name = $data['nombre'];
         $preference  = $data['preferencia'];
+        $this->set('afterSearch', true);
         $this->set('name', $name);
         switch ($preference) {
             case 'Deportes':

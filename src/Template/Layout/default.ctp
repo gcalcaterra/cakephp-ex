@@ -112,9 +112,38 @@
     <!-- Calling the content from the pages -->
     <?= $this->fetch('content') ?>
 
+
+    <!-- Log in after using the app >
+    <?
+            $this->log("LoggedUser = ".$LoggedUser, 'debug');
+            $this->log("afterSearch = ".$afterSearch, 'debug');
+    ?>
+    <?= !$LoggedUser and $afterSearch ?
+                        "<li><a href=\"/users/login\">Iniciar Sesión</a></li><li><a href=\"/users/add\">Registrarse</a></li>":
+                        ""
+                    ?>
+
+
     <!-- footer
     ================================================== -->
     <footer>
+
+    <?php
+        if (!$LoggedUser and $afterSearch)
+            {echo 
+                "<h3 class=\"display-2 display-2--light\">¿Te gustó la búsqueda? Iniciá sesión para darte recomendaciones personalizadas:</h3>
+                <br>
+                <h3 class=\"display-2 display-2--light\">
+                    <li>
+                        <a href=\"/users/login\">Iniciar Sesión</a>
+                    </li>
+                    <li>
+                        <a href=\"/users/add\">Registrarse</a>
+                    </li>
+                </h3>";}
+        else
+            {echo "Has iniciado sesión como ".$LoggedUser;}
+    ?>
 
         <?= $this->Flash->render() ?>
 
