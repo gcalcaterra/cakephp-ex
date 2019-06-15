@@ -125,7 +125,7 @@
                             <span class="testimonials__pos">Estudiante</span>
                         </div>
 
-                        <p> Soy Larissa tengo 27 años, estoy casada hace 4 años, tengo un hijo también de cuatro años, actualmente me desempeño en el cargo de Aseguramiento QA de la Empresa Sif America Paraguay y a través de esta aplicación estoy en la recta final de la carrera de grado.</p>
+                        <p> Soy Larissa tengo 27 años, estoy casada, tengo un hijo de cuatro años, actualmente estoy trabajando en la Empresa Sif America Paraguay y a través de esta aplicación estoy en la recta final de la carrera de grado.</p>
 
                     </div>
 
