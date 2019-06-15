@@ -124,7 +124,10 @@ class PreferencesController extends AppController
         require_once __DIR__ . '../../vendor/autoload.php'; */
         // This code will execute if the user entered a search query in the form
         // and submitted the form. Otherwise, the page displays the form above.
-        if (isset($_GET['q']) && isset($_GET['maxResults'])) {
+        $interest = $_GET['q'];
+        $maxResults = $_GET['maxResults'];
+
+        if (isset($interest) && isset($maxResults)) {
             /*
             * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
             * {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
@@ -135,13 +138,28 @@ class PreferencesController extends AppController
             $client->setDeveloperKey($DEVELOPER_KEY);
             // Define an object that will be used to make all API requests.
             $youtube  = new Google_Service_YouTube($client);
-            $htmlBody = '';
-            try {
+            $htmlInspiringVideos = '';
+            $htmlLearningVideos = '';
+            $MagicKeyWord1 = 'como';
+            $MagicKeyWord2 = 'aprender';
+            $MagicKeyWord3 = 'inspiración';
+            $MagicKeyWord4 = 'motivacion';
+            #$MagicKeyword3 = 'tutorial';
+
+            $inspiringKeyWords = $MagicKeyWord3.'|'.$MagicKeyWord4.' "'.$interest.'"';
+            $this->log('inspiration= '.$inspiringKeyWords, 'debug');
+
+            $learningKeyWords = $MagicKeyWord1.'|'.$MagicKeyWord2.' "'.$interest.'"';
+            $this->log('interest= '.$learningKeyWords,'debug');
+
+
+             //Inspiring
+             try {
                 // Call the search.list method to retrieve results matching the specified
                 // query term.
                 $searchResponse = $youtube->search->listSearch('id,snippet', array(
-                    'q' => $_GET['q'],
-                    'maxResults' => $_GET['maxResults']
+                    'q' => $inspiringKeyWords,
+                    'maxResults' => $maxResults
                 ));
                 $videos         = '';
                 $direccion      = '<iframe class="zoom" ; width="450" height="300" src="https://www.youtube.com/embed/%s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><feff>';
@@ -154,13 +172,43 @@ class PreferencesController extends AppController
                             break;
                     }
                 }
-                $htmlBody .= "<ul>$videos</ul>";
+                $htmlInspiringVideos .= "<ul>$videos</ul>";
+                $this->set('htmlInspiringVideos', $htmlInspiringVideos);
             } catch (Google_Service_Exception $e) {
-                $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
+                $htmlInspiringVideos .= sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
             } catch (Google_Exception $e) {
-                $htmlBody .= sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
+                $htmlInspiringVideos .= sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
             }
-            $this->set('htmlBody', $htmlBody);
+
+            //learning
+            try {
+                // Call the search.list method to retrieve results matching the specified
+                // query term.
+                $searchResponse = $youtube->search->listSearch('id,snippet', array(
+                    'q' => $learningKeyWords,
+                    'maxResults' => $maxResults
+                ));
+                $videos         = '';
+                $direccion      = '<iframe class="zoom" ; width="450" height="300" src="https://www.youtube.com/embed/%s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><feff>';
+                // Add each result to the appropriate list, and then display the lists of
+                // matching videos, channels, and playlists.
+                foreach ($searchResponse['items'] as $searchResult) {
+                    switch ($searchResult['id']['kind']) {
+                        case 'youtube#video':
+                            $videos .= sprintf($direccion, $searchResult['id']['videoId']);
+                            break;
+                    }
+                }
+                $htmlLearningVideos .= "<ul>$videos</ul>";
+                $this->set('htmlLearningVideos', $htmlLearningVideos);
+            } catch (Google_Service_Exception $e) {
+                $htmlLearningVideos .= sprintf('<p>A service error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
+            } catch (Google_Exception $e) {
+                $htmlLearningVideos .= sprintf('<p>An client error occurred: <code>%s</code></p>', htmlspecialchars($e->getMessage()));
+            }
+
+           
+            
         }
     }
 

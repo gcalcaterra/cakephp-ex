@@ -12,9 +12,9 @@
                 <h3>Bienvenido al Poder de la WEB</h3>
 
                 <h1>
-                    Aqui encontraras como hacer lo que siempre has querido <br>
-                    aprender y mostrarte que puedes lograrlo. <br>
-                    Inspirate eres capaz de conseguirlo.<br>
+                    Aquí encontrarás como hacer lo que siempre has querido <br>
+                    aprender y te mostraremos como que puedes lograrlo. <br>
+                    Inspirate, eres capaz de conseguirlo.<br>
                 </h1>
 
                 <div class="home-content__buttons">
@@ -108,7 +108,7 @@
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subheade">El Equipo</h3>
-                <P ALIGN="justify"> Somos dos estudiantes de la Carrera de Licenciatura de Ciencias Informatica, con enfasis en analisis de Sistemas, de la Universidad Nacional de Asunción, que ante la problemática que existe hoy en día en nuestro país, que es la falta de oportunidades para la formación académica, como trabajo de grado decidimos crear la aplicación Viduc Videos Educativos que te permite aprender de manera fácil y sencilla oficios como cocina, manualidades, plomería entre otros, simplemente con el acceso a internet.
+                <P ALIGN="justify"> Somos dos estudiantes de la Carrera de Licenciatura de Ciencias Informatica, con enfasis en analisis de Sistemas, de la Universidad Nacional de Asunción, que ante la problemática que existe hoy en día en nuestro país, que es la falta de oportunidades para la formación académica, como trabajo de grado decidimos crear la aplicación Viduc, Videos Educativos que te permite aprender de manera fácil y sencilla oficios como cocina, manualidades, plomería entre otros, simplemente con el acceso a internet.
                 </p>
             </div>
         </div>
@@ -131,13 +131,14 @@
 
                     <div class="testimonials__slide">
 
-                        <img src="img/gustavo.jpg" alt="Author image" class="testimonials__avatar">
+                        <img src="img/gustavo.png" alt="Author image" class="testimonials__avatar">
                         <div class="testimonials__info">
                             <span class="testimonials__name">Gustavo Calcaterra</span>
                             <span class="testimonials__pos">Estudiante</span>
                         </div>
 
-                        <p>Soy Gustavo tengo 26 años, soy soltero desde siempre, no tengo hijos, actualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA, y a través de esta aplicación estoy en la recta final de conquistar el mundo</p>
+                        <p>Soy Gustavo, tengo 26 años, hactualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA, y a través de esta aplicación estoy en la recta final de conquistar el mundo, jaja.
+                            En realidad solamente busco generar más conciencia y perspectiva sobre las herramientas a nuestro alcance para mejoras cada uno nuestras vidas.</p>
 
                     </div>
 

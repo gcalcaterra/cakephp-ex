@@ -128,6 +128,13 @@
 
             <div class="col-six tab-full right footer-subscribe">
 
+                <h2> <span><a href="https://forms.gle/DUgkZnkF6W6Q2y4q8" target="_blank">Hey, dejanos tu opinión</a></span></h2>
+               
+            </div>
+
+</div>
+<!--             <div class="col-six tab-full right footer-subscribe">
+
                 <h4>¿Querés recibir contenido de VIDUC? </h4>
                 <p>¡Suscribite a nuestro news lettter! </p>
 
@@ -139,7 +146,7 @@
                     </form>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
         <!-- end footer-main -->

@@ -18,7 +18,12 @@
                <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
             </div>
 
-            <?= $htmlBody ?>
+            <h2 class="display-2 display-2--light">Inspirate</h2>
+            <?= $htmlInspiringVideos ?>
+            <br>
+            <br>
+            <h2 class="display-2 display-2--light">Aprendé</h2>
+            <?= $htmlLearningVideos ?>
             
          </div>
       </div>

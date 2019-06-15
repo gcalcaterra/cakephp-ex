@@ -8,8 +8,12 @@ CREATE TABLE users (
 	email VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL,
 	created DATETIME,
-	modified DATETIME
+	modified DATETIME,
+	UNIQUE KEY (email)
 );
+
+--INSERT INTO users users (id, name, email, password) 
+--		VALUES (1, root, root@viduc.net, iamroot)
 
 CREATE TABLE preferences (
 	id INT AUTO_INCREMENT PRIMARY KEY,
