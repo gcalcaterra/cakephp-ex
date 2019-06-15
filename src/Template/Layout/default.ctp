@@ -56,7 +56,7 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="#0">
+            <a class="site-logo" href="/">
                 <img src="/img/logo.png" alt="Homepage">
             </a>
         </div>
