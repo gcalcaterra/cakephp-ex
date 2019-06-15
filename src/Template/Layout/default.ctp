@@ -39,7 +39,6 @@
                 document.getElementById("opciones").style.display = "block";
 
             }
-
         }
     </script>
 
@@ -56,7 +55,7 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="#0">
+            <a class="site-logo" href="/">
                 <img src="/img/logo.png" alt="Homepage">
             </a>
         </div>
@@ -75,8 +74,9 @@
                     <li><a class="smoothscroll" href="/#services" title="Historias">Historias</a></li>
                     <li><a class="smoothscroll" href="/#about" title="Nosotros">Acerca de Nosotros</a></li>
                     <?= $LoggedUser ?
-                        "<li><a href=\"/users/logout\">Salir</a></li>" :
-                        "<li><a href=\"/users/login\">Iniciar Sesión</a></li><li><a href=\"/users/add\">Registrarse</a></li>"
+                        "<li><a href=\"/users/logout\">Salir</a></li>"
+                        : "<li><a href=\"/users/login\">Iniciar Sesión</a></li>
+                        <li><a href=\"/users/add\">Registrarse</a></li>"
                     ?>
                 </ul>
 
@@ -158,11 +158,11 @@
             <div class="col-six tab-full right footer-subscribe">
 
                 <h2> <span><a href="https://forms.gle/DUgkZnkF6W6Q2y4q8" target="_blank">Hey, dejanos tu opinión</a></span></h2>
-               
+
             </div>
 
-</div>
-<!--             <div class="col-six tab-full right footer-subscribe">
+        </div>
+        <!--             <div class="col-six tab-full right footer-subscribe">
 
                 <h4>¿Querés recibir contenido de VIDUC? </h4>
                 <p>¡Suscribite a nuestro news lettter! </p>
@@ -261,6 +261,13 @@
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
+    <script>
+        $(window).on("pageshow", function() {
+            $("input[type=radio]").each(function(i) {
+                $(this).prop('checked', false);
+            });
+        });
+    </script>
 </body>
 
 </html>
