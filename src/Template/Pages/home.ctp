@@ -176,9 +176,9 @@
                     <P ALIGN="justify">Adilyn Malcolm domina el baila del dubstep gracias a que aprendió la técnica en YouTube. Esta niña de 12 años aprendió viendo una y otra vez a los mejores bailarines de dubstep en el mundo.
                     </p>
                     <div class="video-container">
-                    <iframe width="450" height="250" src="https://www.youtube.com/embed/Ebp8AXKX0d8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
+                        <iframe width="450" height="450" src="https://www.youtube.com/embed/Ebp8AXKX0d8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
+                </div>
             </div>
 
             <div class="col-block service-item" data-aos="fade-up">

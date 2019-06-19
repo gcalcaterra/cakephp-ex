@@ -157,6 +157,15 @@ class PreferencesController extends AppController
             $afterSearch = true;
             $this->set('afterSearch', $afterSearch);
 
+            //How to show the videos
+            $direccion = '
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="video-container">
+                        <iframe width="450" height="250" src="https://www.youtube.com/embed/%s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        ';
+
              //Inspiring
              try {
                 // Call the search.list method to retrieve results matching the specified
@@ -166,7 +175,7 @@ class PreferencesController extends AppController
                     'maxResults' => $maxResults
                 ));
                 $videos         = '';
-                $direccion      = '<iframe class="zoom" ; width="450" height="300" src="https://www.youtube.com/embed/%s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><feff>';
+                //$direccion      = '<iframe class="zoom" ; width="450" height="300" src="https://www.youtube.com/embed/%s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><feff>';
                 // Add each result to the appropriate list, and then display the lists of
                 // matching videos, channels, and playlists.
                 foreach ($searchResponse['items'] as $searchResult) {
@@ -193,7 +202,6 @@ class PreferencesController extends AppController
                     'maxResults' => $maxResults
                 ));
                 $videos         = '';
-                $direccion      = '<iframe class="zoom" ; width="450" height="300" src="https://www.youtube.com/embed/%s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><feff>';
                 // Add each result to the appropriate list, and then display the lists of
                 // matching videos, channels, and playlists.
                 foreach ($searchResponse['items'] as $searchResult) {
