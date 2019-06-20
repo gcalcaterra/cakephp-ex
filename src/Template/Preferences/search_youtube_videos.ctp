@@ -1,5 +1,5 @@
-<section id='videos' class="s-services">
-
+<section id='videos' class="s-contact">
+<div class="overlay"></div>
    <div class="row section-header" data-aos="fade-up">
       <div class="col-full">
          <h1 class="display-2 display-2--light">Esto es lo que buscas </h1>
@@ -11,9 +11,12 @@
          <?= $htmlInspiringVideos ?>
          <br>
          <h2 class="display-2 display-2--dark">Aprendé</h2>
-         <?= $htmlLearningVideos ?>
+         <?= $htmlLearningVideos ?> 
       </div>
 </section>
+<div style="text-align: left ">
+               <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
+            </div>
 
 
 
