@@ -241,7 +241,7 @@
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead">Contamos un Poco de Ti</h3>
-                <h1 class="display-3 display-2--light">Completa algunos Datos para que sepamos que te interesa</h1>
+                <h1 class="display-2 display-2--light">Completa algunos Datos para que sepamos que te interesa</h1>
             </div>
         </div>
 
