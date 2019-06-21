@@ -133,7 +133,8 @@ class PreferencesController extends AppController
             * {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
             * Please ensure that you have enabled the YouTube Data API for your project.
             */
-            $DEVELOPER_KEY = 'AIzaSyAcegEcjGVRThQ816PniqyLRsFD6WH4PHg';
+            //$DEVELOPER_KEY = 'AIzaSyAcegEcjGVRThQ816PniqyLRsFD6WH4PHg';
+            $DEVELOPER_KEY = env('YOUTUBE_API_KEY');
             $client        = new Google_Client();
             $client->setDeveloperKey($DEVELOPER_KEY);
             // Define an object that will be used to make all API requests.
