@@ -2958,29 +2958,11 @@ html.no-csstransitions .home-content__main {
  * # contact 
  *
  * ------------------------------------------------------------------- */
- .zoom{
-    transition: 1.5s ease;
-     -moz-transition: 1.5s ease; /* Firefox */
-     -webkit-transition: 1.5s ease; /* Chrome - Safari */
-     -o-transition: 1.5s ease; /* Opera */
- 
-}
-.zoom:hover{
-    transform : scale(2);
-    -moz-transform : scale(2); /* Firefox */
-    -webkit-transform : scale(2); /* Chrome - Safari */
-    -o-transform : scale(2); /* Opera */
-    -ms-transform : scale(2); /* IE9 */
-margin-left:auto;
-margin-right:auto;
-
-
-}
 
 
 
 .s-contact {
-    background-color: #151515;
+    background-color: #61B6FE;
     background-image: url("../images/contact-bg.jpg");
     background-repeat: no-repeat;
     background-position: center, center;

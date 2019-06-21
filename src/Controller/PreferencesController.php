@@ -161,7 +161,7 @@ class PreferencesController extends AppController
             $direccion = '
             <div class="col-block service-item" data-aos="fade-up">
                 <div class="video-container">
-                        <iframe  class="zoom" ; width="450" initial-scale=1 height="250" src="https://www.youtube.com/embed/%s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe  width="450" initial-scale=1 height="250" src="https://www.youtube.com/embed/%s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         ';

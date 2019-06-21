@@ -17,8 +17,10 @@ echo h($name) . '!';
     </div>
 </div>
 
+
+
 <div class="row services-list block-1-2 block-tab-full">
-<div class="col-block service-item" data-aos="fade-up" id="columna1">
+       <div class="col-block service-item" data-aos="fade-up" >
                 <div class="service-text">
                 <div class="video-container">
                     <iframe width="500" height="300" align="left" src="https://www.youtube.com/embed/xjx6CJlsEM8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -32,10 +34,11 @@ echo h($name) . '!';
 
   
 
- <div class="col-block service-item" data-aos="fade-up" id="columna2">
+ <div class="col-block service-item" data-aos="fade-up">
       
 
       <form action="/preferences/searchYoutubeVideos" method="GET">
+      
               <div>
                   <h3 class="subhead">Temas a buscar :</h3>
                   <input type="search" style=" border-style: solid; font-size:12pt; color: #f7f9f7; letter-spacing : 3px; id=" q" name="q" placeholder="Temas Buscados">
@@ -47,12 +50,13 @@ echo h($name) . '!';
               <div style="text-align: right ;width:300px">
                   <input type="submit" value="Buscar">
               </div>
+               
           </form>
           </div> 
           
           </div>
 
-
+</div>
 
           <div class="row services-list block-1-2 block-tab-full">
 
@@ -91,7 +95,7 @@ echo h($name) . '!';
  </div>
  
  
-</div>
+
 
 
 </div>
