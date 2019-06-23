@@ -113,8 +113,8 @@
     <?= $this->fetch('content') ?>
 
 
-    <!-- Log in after using the app >
-    <?
+    <!-- Log in after using the app -->
+    <?php
             $this->log("LoggedUser = ".$LoggedUser, 'debug');
             $this->log("afterSearch = ".$afterSearch, 'debug');
     ?>
@@ -141,8 +141,8 @@
                         <a href=\"/users/add\">Registrarse</a>
                     </li>
                 </h3>";}
-        else
-            {echo "Has iniciado sesión como ".$LoggedUser;}
+        else if (!$afterSearch and $LoggedUser)
+            {echo "Has iniciado sesión como ".$LoggedUser['email'];}
     ?>
 
         <?= $this->Flash->render() ?>
