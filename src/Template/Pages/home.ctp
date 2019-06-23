@@ -137,8 +137,8 @@
                             <span class="testimonials__pos">Estudiante</span>
                         </div>
 
-                        <p>Soy Gustavo, tengo 26 años, hactualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA, y a través de esta aplicación estoy en la recta final de conquistar el mundo, jaja.
-                            En realidad solamente busco generar más conciencia y perspectiva sobre las herramientas a nuestro alcance para mejoras cada uno nuestras vidas.</p>
+                        <p>Soy Gustavo, tengo 26 años, actualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA  y a través de esta aplicación estoy en la recta final de conquistar el mundo, jaja.
+                            En realidad solamente busco generar más conciencia y perspectiva sobre las herramientas a nuestro alcance para lograr mejoras en nuestras vidas.</p>
 
                     </div>
 
