@@ -8,10 +8,10 @@
       </div>
    </div>
       <div class="row services-list block-1-2 block-tab-full">
-         <h2 class="display-2 display-2--dark">Inspirate</h2>
+         <h2 class="display-2 display-2--light">Inspirate</h2>
          <?= $htmlInspiringVideos ?>
          <br>
-         <h2 class="display-2 display-2--dark">Aprendé</h2>
+         <h2 class="display-2 display-2--light">Aprendé</h2>
          <?= $htmlLearningVideos ?> 
       </div>
 </section>
