@@ -3,7 +3,7 @@
 
 <div class="row section-header has-bottom-sep" data-aos="fade-up">
     <div class="col-full">
-        <h1 class="display-2">Hola
+        <h1 class="display-2 display-2--light">Hola
 
 <?php
 echo h($name) . '!';
@@ -21,11 +21,11 @@ echo h($name) . '!';
 <div class="row services-list block-1-2 block-tab-full">
 
        <div class="col-block service-item" data-aos="fade-up" >
-                <div class="service-text">
+                
                 <div class="video-container">
                     <iframe width="500" height="300" align="left" src="https://www.youtube.com/embed/xjx6CJlsEM8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                        
-                </div>
+                
                 </div>
             </div>
 
@@ -90,9 +90,12 @@ echo h($name) . '!';
  </div>
  
  
-
+ 
 
 
 </div>
 
 </section>
+<div style="text-align: left ">
+               <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
+            </div>

@@ -4,7 +4,7 @@
 
 <div class="row section-header has-bottom-sep" data-aos="fade-up">
     <div class="col-full">
-        <h1 class="display-2">Hola
+        <h1 class="display-2 display-2--light">Hola
 
 <?php
 echo h($name) . '!';
@@ -19,36 +19,32 @@ echo h($name) . '!';
 
 <div class="row services-list block-1-2 block-tab-full">
 <div class="col-block service-item" data-aos="fade-up" >
-                <div class="service-text">
+              
                 <div class="video-container">
-                <iframe width="500" height="300" align="left" src="https://www.youtube.com/embed/zX8ERlu-TEc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                </div>
-                <div style="text-align: left ">
-               <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
-            </div> 
+                <iframe width="500" height="500" align="left" src="https://www.youtube.com/embed/zX8ERlu-TEc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
             </div>
-
+            
+            </div>
   
 
- <div class="col-block service-item" data-aos="fade-up">
-      
+            <div class="col-block service-item" data-aos="fade-up">
+ <div class="row contact-content" data-aos="fade-up">
 
-      <form action="/preferences/searchYoutubeVideos" method="GET">
-              <div>
-                  <h3 class="subhead">Temas a buscar :</h3>
-                  <input type="search" style=" border-style: solid; font-size:12pt; color: #f7f9f7; letter-spacing : 3px; id=" q" name="q" placeholder="Temas Buscados">
-              </div>
-              <div>
-                  <h3 class="subhead"> Cantidad de Resultados:</h3>
-                  <input type="number" style=" border-style: solid; font-size:12pt; color: #f7f9f7; letter-spacing : 3px; id=" maxResults" name="maxResults" min="1" max="50" step="1" value="10">
-              </div>
-              <div style="text-align: right ;width:300px">
-                  <input type="submit" value="Buscar">
-              </div>
-          </form>
-          </div> 
-          
+<div class="contact-primary">
+
+<form action="/preferences/searchYoutubeVideos" method="GET">
+<b><font color="LimeGreen" style="font-size:20px;">Temas a buscar :</font></b>
+<input type="search" id="q" name="q"  placeholder="Programación, tenis ..." class="full-width">
+<b><font color="LimeGreen">Cantidad de Resultados :</font></b>
+<input type="number" id="maxResults" name="maxResults" step="1" value="10">
+<input type="submit" value="Buscar">
+
+</form>
+
+ </div>
+ </div>
+</div> 
           </div>
 
 </div>
@@ -86,7 +82,7 @@ echo h($name) . '!';
  </div>
 
   <div class="video-container">
-     <iframe width="450" height="250" src="https://www.youtube.com/embed/pT58_5gPL9A?start=14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     <iframe width="450" height="250" src="https://www.youtube-nocookie.com/embed/ukfD6bSRtfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  </div>
  
  
@@ -96,3 +92,6 @@ echo h($name) . '!';
 
 
 </section>
+<div style="text-align: left ">
+               <input type="button" value="Volver" onclick="javascript:history.back(-1);"/>
+            </div>
