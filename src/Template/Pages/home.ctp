@@ -137,8 +137,8 @@
                             <span class="testimonials__pos">Estudiante</span>
                         </div>
 
-                        <p>Soy Gustavo, tengo 26 años, hactualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA, y a través de esta aplicación estoy en la recta final de conquistar el mundo, jaja.
-                            En realidad solamente busco generar más conciencia y perspectiva sobre las herramientas a nuestro alcance para mejoras cada uno nuestras vidas.</p>
+                        <p>Soy Gustavo, tengo 26 años, actualmente me desempeño en el cargo de Consultor I+D en Datasystems SAECA  y a través de esta aplicación estoy en la recta final de conquistar el mundo, jaja.
+                            En realidad solamente busco generar más conciencia y perspectiva sobre las herramientas a nuestro alcance para lograr mejoras en nuestras vidas.</p>
 
                     </div>
 
@@ -257,16 +257,26 @@
                     <p><b>
                             <font color="white">Preferencia:</font>
                         </b>
-                        <input type="radio" name="preferencia" value="Deportes" required onchange="mostrar(this.value);"> Deportes
-                        <input type="radio" name="preferencia" value="Idiomas" required onchange="mostrar(this.value);"> Idiomas
-                        <input type="radio" name="preferencia" value="Cocina" required onchange="mostrar(this.value);"> Cocina
-                        <input type="radio" name="preferencia" value="Baile" required onchange="mostrar(this.value);"> Baile
-                        <input type="radio" name="preferencia" value="Electricidad" required onchange="mostrar(this.value);"> Electricidad
-                        <input type="radio" name="preferencia" value="Manicura" required onchange="mostrar(this.value);"> Manicura
-                        <input type="radio" name="preferencia" value="Estilista" required onchange="mostrar(this.value);"> Estilista
-                        <input type="radio" name="preferencia" value="Plomeria" required onchange="mostrar(this.value);"> Plomeria
-                        <input type="radio" name="preferencia" value="Costura" required onchange="mostrar(this.value);"> Costura
-                        <input type="radio" name="preferencia" value="Otros" required onchange="mostrar(this.value);"> Otros
+                        <input type="radio" name="preferencia" value="Deportes" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Deportes')">Deportes</a>
+                        <input type="radio" name="preferencia" value="Idiomas" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Idiomas')">Idiomas</a>
+                        <input type="radio" name="preferencia" value="Cocina" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Cocina')">Cocina</a>
+                        <input type="radio" name="preferencia" value="Baile" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Baile')">Baile</a>
+                        <input type="radio" name="preferencia" value="Electricidad" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Electricidad')">Electricidad</a>
+                        <input type="radio" name="preferencia" value="Manicura" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Manicura')">Manicura</a>
+                        <input type="radio" name="preferencia" value="Estilista" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Estilista')">Estilista</a>
+                        <input type="radio" name="preferencia" value="Plomeria" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Plomeria')">Plomeria</a>
+                        <input type="radio" name="preferencia" value="Costura" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Costura')">Costura</a>
+                        <input type="radio" name="preferencia" value="Otros" required onchange="mostrar(this.value);">
+                        <a style="cursor:pointer" onclick="clickRadio('Otros')">Otros</a>
                     </p>
 
                     <div id="opciones" style="display:none;">

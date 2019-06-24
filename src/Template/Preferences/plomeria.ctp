@@ -12,7 +12,7 @@ echo h($name) . '!';
 ?>
         </h1>
         <h3 class="subhead">Esto te puede interesar</h3>
-        <h3 class="subhead">>Podes aprender un poco como realizar lo basico en tu hogar</h3>
+        <h3 class="subhead">Podes aprender un poco como realizar lo basico en tu hogar</h3>
 
     </div>
 </div>

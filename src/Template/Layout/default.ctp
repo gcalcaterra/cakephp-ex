@@ -125,22 +125,21 @@
 
     <!-- Log in after using the app -->
     <?php
-            $this->log("LoggedUser = ".$LoggedUser, 'debug');
-            $this->log("afterSearch = ".$afterSearch, 'debug');
+    $this->log("LoggedUser = " . $LoggedUser, 'debug');
+    $this->log("afterSearch = " . $afterSearch, 'debug');
     ?>
     <?= !$LoggedUser and $afterSearch ?
-                        "<li><a href=\"/users/login\">Iniciar Sesión</a></li><li><a href=\"/users/add\">Registrarse</a></li>":
-                        ""
-                    ?>
+        "<li><a href=\"/users/login\">Iniciar Sesión</a></li><li><a href=\"/users/add\">Registrarse</a></li>" : ""
+    ?>
 
 
     <!-- footer
     ================================================== -->
     <footer>
 
-    <?php
-        if (!$LoggedUser and $afterSearch)
-            {echo 
+        <?php
+        if (!$LoggedUser and $afterSearch) {
+            echo
                 "<h3 class=\"display-2 display-2--light\">¿Te gustó la búsqueda? Iniciá sesión para darte recomendaciones personalizadas:</h3>
                 <br>
                 <h3 class=\"display-2 display-2--light\">
@@ -150,10 +149,11 @@
                     <li>
                         <a href=\"/users/add\">Registrarse</a>
                     </li>
-                </h3>";}
-        else if (!$afterSearch and $LoggedUser)
-            {echo "Has iniciado sesión como ".$LoggedUser['email'];}
-    ?>
+                </h3>";
+        } else if (!$afterSearch and $LoggedUser) {
+            echo "Has iniciado sesión como " . $LoggedUser['email'];
+        }
+        ?>
 
         <?= $this->Flash->render() ?>
 
@@ -277,6 +277,11 @@
                 $(this).prop('checked', false);
             });
         });
+
+        function clickRadio(val) {
+            $("input[type=radio][value=" + val + "]").prop('checked', true);
+            $("input[type=radio][value=" + val + "]").change();
+        }
     </script>
 </body>
 
