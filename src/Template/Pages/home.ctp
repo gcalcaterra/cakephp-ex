@@ -103,7 +103,7 @@
 
     <!-- Autores
     ================================================== -->
-    <section id="about" class="s-clients">
+    <section id="aboutu" class="s-clients">
 
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
