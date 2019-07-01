@@ -116,12 +116,13 @@
             <span class="header-menu-icon"></span>
         </a>
 
+        <?= $this->Flash->render() ?>
     </header>
     <!-- end s-header -->
 
+
     <!-- Calling the content from the pages -->
     <?= $this->fetch('content') ?>
-
 
     <!-- Log in after using the app -->
     <?php
@@ -154,8 +155,6 @@
             echo "Has iniciado sesión como " . $LoggedUser['email'];
         }
         ?>
-
-        <?= $this->Flash->render() ?>
 
         <div class="row footer-main">
 
