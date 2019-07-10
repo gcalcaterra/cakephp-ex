@@ -24,6 +24,9 @@
                     <a href="#about" class="smoothscroll btn btn--stroke">
                         Inspirate
                     </a>
+                    <a href="https://bit.ly/2FZS3H1" target="_blank" class="smoothscroll btn btn--stroke">
+                        Presentación
+                    </a>
                 </div>
 
             </div>
